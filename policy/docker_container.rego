@@ -1,6 +1,6 @@
 package container
 
-# Do not use 'latest' tag for base imagedeny[msg] {
+# Do not use 'latest' tag for base image
 deny[msg] {
     input[i].Cmd == "from"
     val := split(input[i].Value[0], ":")
