@@ -1,8 +1,8 @@
 SHELL := /bin/bash
 
 DOCKER ?= docker
-DOCKER_COMPOSE ?= docker-compose
-DOCKER_BUILD_ARCH ?= linux/amd64,linux/arm64
+DOCKER_COMPOSE ?= docker compose
+DOCKER_BUILD_ARCH ?= linux/arm64
 CONFTEST ?= conftest
 POLICY_COMPONENT_PATHS ?= components/policy/lib components/policy/policy components/policy/waivers
 
