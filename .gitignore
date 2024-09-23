@@ -68,3 +68,9 @@ Temporary Items
 .apdisk
 
 .idea
+.golangci.yaml
+.pre-commit-config.yaml
+.repo/
+.tflint.hcl
+components/
+.secrets.baseline

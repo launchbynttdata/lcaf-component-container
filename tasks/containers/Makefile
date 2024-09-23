@@ -24,8 +24,8 @@ ifeq ($(CONTAINER_IMAGE_VERSION),)
     $(error CONTAINER_IMAGE_VERSION is not set. Please set it before running make.)
 endif
 
-.PHONY: docker/build
-docker/build : docker/check-env-vars
+.PHONY: build
+build : docker/check-env-vars
 	@echo "Building with CONTAINER_REGISTRY=$(CONTAINER_REGISTRY), CONTAINER_IMAGE_NAME=$(CONTAINER_IMAGE_NAME), CONTAINER_IMAGE_VERSION=$(CONTAINER_IMAGE_VERSION)"
 	$(DOCKER) buildx build --platform $(DOCKER_BUILD_ARCH) $(BUILD_ARGS) -t $(CONTAINER_REGISTRY)/$(CONTAINER_IMAGE_NAME):$(CONTAINER_IMAGE_VERSION) --load $(SOURCE_FOLDER)/.
 
