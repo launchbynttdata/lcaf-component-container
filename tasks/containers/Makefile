@@ -6,6 +6,7 @@ DOCKER_BUILD_ARCH ?= linux/arm64
 CONFTEST ?= conftest
 POLICY_COMPONENT_PATHS ?= components/policy/lib components/policy/policy components/policy/waivers
 SOURCE_FOLDER ?= source
+TEST_FOLDER ?= test
 
 .PHONY: lint
 lint::
@@ -48,3 +49,8 @@ docker/push : docker/build
 .PHONY: docker/aws_ecr_login
 docker/aws_ecr_login:
 	aws ecr get-login-password | $(DOCKER) login --username AWS --password-stdin $(CONTAINER_REGISTRY)
+
+
+.PHONY: test
+test : build
+	@echo "[Not Implemented] Running test target"
