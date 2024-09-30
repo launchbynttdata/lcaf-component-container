@@ -42,8 +42,8 @@ docker_compose/stop:
 		$(DOCKER_COMPOSE) down; \
 	fi
 
-.PHONY: docker/push
-docker/push : docker/build
+.PHONY: push
+push : build
 	$(DOCKER) buildx build --platform $(DOCKER_BUILD_ARCH) $(BUILD_ARGS) -t $(CONTAINER_REGISTRY)/$(CONTAINER_IMAGE_NAME):$(CONTAINER_IMAGE_VERSION) --push $(SOURCE_FOLDER)/.
 
 .PHONY: docker/aws_ecr_login
