@@ -52,5 +52,5 @@ docker/aws_ecr_login:
 
 
 .PHONY: test
-test : build
+test :: build
 	@echo "[Not Implemented] Running test target"
